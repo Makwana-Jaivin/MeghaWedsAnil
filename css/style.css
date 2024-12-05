@@ -1827,3 +1827,90 @@ form label {
 
 /*# sourceMappingURL=style.css.map */
 
+/* Pop-up Modal Styling */
+.welcome-popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+}
+
+.welcome-popup-content {
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  width: 50%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.welcome-popup h2 {
+  font-family: 'Sacramento', cursive;
+  color: #c0392b;
+  font-size: 36px;
+}
+
+.welcome-popup p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  color: #555;
+}
+
+.welcome-popup button {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.welcome-popup button:hover {
+  background-color: #e74c3c;
+}
+
+@keyframes fadeIn {
+  from {
+     opacity: 0;
+  }
+  to {
+     opacity: 1;
+  }
+}
+
+
+
+
+.masonry-gallery {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.grid-item {
+  width: 30%;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item img:hover {
+  transform: scale(1.1);
+}
