@@ -1886,31 +1886,3 @@ form label {
      opacity: 1;
   }
 }
-
-
-
-
-.masonry-gallery {
-  display: flex;
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1200px;
-}
-
-.grid-item {
-  width: 30%;
-  margin: 5px;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.grid-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease-in-out;
-}
-
-.grid-item img:hover {
-  transform: scale(1.1);
-}
