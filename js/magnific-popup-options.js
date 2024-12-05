@@ -46,3 +46,13 @@ $(document).ready(function() {
 	magnifVideo();
 
 });
+
+$(document).ready(function() {
+    $('.image-popup').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true // Enable gallery navigation
+      }
+    });
+  });
+  
