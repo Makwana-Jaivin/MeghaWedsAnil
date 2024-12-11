@@ -63,3 +63,141 @@ body {
     opacity: 1;
   }
   
+
+
+  .gallery-item {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+.gallery-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*.gallery-header {
+position: relative; 
+height: 25vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+overflow: hidden; 
+color: #fff;
+}
+.gallery-header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url('images/DSC06192.JPG') no-repeat center center/cover;
+filter: blur(10px); 
+z-index: -1; 
+transform: scale(1.1); 
+}
+.gallery-header .nav-links {
+margin-bottom: 20px;
+z-index: 1;
+}
+.gallery-header .content {
+z-index: 1; 
+}
+
+.gallery-header .nav-links a {
+margin: 0 15px;
+text-decoration: none;
+font-family: 'Work Sans', sans-serif;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: #ffffff;
+}
+
+.gallery-header .nav-links a:hover {
+color: #007bff;
+}
+
+.gallery-header .content h1 {
+font-family: 'Sacramento', cursive;
+font-size: 3rem;
+margin: 10px 0;
+color: #ffffff;
+}
+
+/* Gallery Section */
+/*.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+padding: 20px;
+}
+
+.gallery-item {
+position: relative;
+overflow: hidden;
+border-radius: 8px;
+}
+
+.gallery-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+border-radius: 8px;
+transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+transform: scale(1.1);
+}
+
+.download-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.6);
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+transition: opacity 0.3s ease;
+border-radius: 8px;
+}
+
+.gallery-item:hover .download-overlay {
+opacity: 1;
+}
+
+.download-overlay a {
+color: #fff;
+text-decoration: none;
+font-size: 16px;
+font-family: 'Work Sans', sans-serif;
+padding: 10px 20px;
+background: #007bff;
+border-radius: 4px;
+transition: background 0.3s ease;
+}
+
+.download-overlay a:hover {
+background: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+.gallery-header .content h1 {
+    font-size: 2.5rem;
+}
+
+.gallery-header .nav-links a {
+    font-size: 14px;
+}
+}
+*/
+

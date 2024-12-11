@@ -32,6 +32,9 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed" rel="stylesheet">
 	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
+
 	<!-- clock   -->
 	<link rel="stylesheet" href="css/responsive-clock.css">
 	<!-- Animate.css -->
@@ -58,7 +61,7 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
-
+	
 	</head>
 	<body>
 		
@@ -76,7 +79,6 @@
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
-	
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
 						<li class="active"><a href="index.html">Home</a></li>
@@ -91,28 +93,28 @@
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/DSC06192.JPG);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Megha &amp; Anil</h1>
-							<br>
-							<img src="images/fprint.png" alt="Megha + Anil"> 
-							<h2>13.02.2025</h2>
-							<h2>"I have found the one whom my soul loves." <br>Song of Solomon 3:4</h2>
-							<div class="flipTimebox">
-								<div class="clock clock-fix"></div>
-							  </div>
-							
-						</div>
-					</div>
+		  <link rel="stylesheet" href="css/style.css">
+		  <div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+			  <div class="display-t">
+				<div class="display-tc animate-box" data-animate-effect="fadeIn">
+				  <h1>Megha &amp; Anil</h1>
+				  <br>
+				  <img src="images/fprint.png" alt="Megha + Anil">
+				  <h2>13.02.2025</h2>
+				  <h2>"I have found the one whom my soul loves." <br>Song of Solomon 3:4</h2>
+				  <!-- Personalized Countdown Message -->
+				  <!-- Countdown Timer -->
+				  <div class="flipTimebox">
+					<div class="clock clock-fix" id="countdown"></div>
+				  </div>
 				</div>
+			  </div>
 			</div>
+		  </div>
 		</div>
 	</header>
-
-
-
+	
 	<div class="event-section">
 		<link rel="stylesheet" href="css/card.css">
 		<h2 class="section-title">Our Wedding</h2>
@@ -236,19 +238,24 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
-		   var popup = document.getElementById('welcomePopup');
-		   var mainContent = document.getElementById('mainContent');
-	 
-		   // Show the pop-up when page loads
-		   popup.classList.add('show');
-	 
-		   // Close the pop-up when clicking anywhere on the pop-up
-		   popup.addEventListener('click', function () {
-			  popup.classList.remove('show');
-			  mainContent.style.filter = 'none'; // Reset dimming
-		   });
+			var popup = document.getElementById('welcomePopup');
+			var mainContent = document.getElementById('mainContent');
+	
+			if (!sessionStorage.getItem('popupShown')) {
+				popup.classList.add('show');
+				sessionStorage.setItem('popupShown', 'true');
+			}
+	
+			popup.addEventListener('click', function () {
+				popup.classList.remove('show');
+				if (mainContent) {
+					mainContent.style.filter = 'none';
+				}
+			});
 		});
 	</script>
+	
+	
 	 
 	 
 	 

@@ -11,7 +11,7 @@ $(document).ready(function() {
   let diff = targetDate / 1000 - currentDate.getTime() / 1000;
 
   if (diff <= 0) {
-    // If remaining countdown is 0
+      // If remaining countdown is 0
     clock = $(".clock").FlipClock(0, {
       clockFace: "DailyCounter",
       countdown: true,
@@ -30,7 +30,7 @@ $(document).ready(function() {
         }
       }
     });
-    
+
     // Check when timer reaches 0, then stop at 0
     setTimeout(function() {
       checktime();
@@ -41,7 +41,7 @@ $(document).ready(function() {
       if (t <= 0) {
         clock.setTime(0);
       }
-      setTimeout(function() {
+    setTimeout(function() {
         checktime();
       }, 1000);
     }
