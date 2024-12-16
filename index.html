@@ -57,26 +57,15 @@
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<script src="js/respond.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
-	<link href="assets/css/themify-icons.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/flaticon.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="assets/css/owl.theme.css" rel="stylesheet">
-    <link href="assets/css/slick.css" rel="stylesheet">
-    <link href="assets/css/slick-theme.css" rel="stylesheet">
-    <link href="assets/css/swiper.min.css" rel="stylesheet">
-    <link href="assets/css/nice-select.css" rel="stylesheet">
-    <link href="assets/css/owl.transitions.css" rel="stylesheet">
-    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
-    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
-    <link href="assets/css/jquery-ui.css" rel="stylesheet">
-    <link href="assets/sass/style.css" rel="stylesheet">
+	
 	</head>
 	<body>
-		
+	<div id="loader">
+		<div class="loader-content">
+			<h2 class="loader-text">M <span>&#10084;</span> A</h2>
+			<p>Loading your memories...</p>
+		</div>
+	</div>
 	<div class="fh5co-loader"></div>
 	<div id="welcomePopup" class="welcome-popup">
 		<div class="welcome-popup-content">
@@ -184,7 +173,7 @@
 	</div>
 	  
 	  
-	<!-- <div id="fh5co-gallery" class="fh5co-section-gray">
+	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -219,67 +208,9 @@
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
-	<section class="wpo-portfolio-section section-padding pt-120" id="gallery">
-		<h2 class="hidden">some</h2>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="portfolio-grids gallery-container clearfix portfolio-slide owl-carousel">
-						<div class="grid">
-							<div class="img-holder">
-								<a href="images/1.JPG" class="fancybox"
-									data-fancybox-group="gall-1">
-									<img src="images/1.JPG" alt class="img img-responsive">
-								</a>
-							</div>
-						</div>
-						<div class="grid">
-							<div class="img-holder">
-								<a href="images/2.JPG" class="fancybox"
-									data-fancybox-group="gall-1">
-									<img src="images/2.JPG" alt class="img img-responsive">
-								</a>
-							</div>
-						</div>
-						<div class="grid">
-							<div class="img-holder">
-								<a href="images/3.JPG" class="fancybox"
-									data-fancybox-group="gall-1">
-									<img src="images/3.JPG" alt class="img img-responsive">
-								</a>
-							</div>
-						</div>
-						<div class="grid">
-							<div class="img-holder">
-								<a href="images/4.JPG" class="fancybox"
-									data-fancybox-group="gall-1">
-									<img src="images/4.JPG" alt class="img img-responsive">
-								</a>
-							</div>
-						</div>
-						<div class="grid">
-							<div class="img-holder">
-								<a href="images/5.JPG" class="fancybox"
-									data-fancybox-group="gall-1">
-									<img src="images/5.JPG" alt class="img img-responsive">
-								</a>
-							</div>
-						</div>
-						<div class="grid">
-							<div class="img-holder">
-								<a href="images/6.JPG" class="fancybox"
-									data-fancybox-group="gall-1">
-									<img src="images/6.JPG" alt class="img img-responsive">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> 
-	</section> 
+	 
 
 	<div id="fh5co-services" class="fh5co-section-gray">
 		<div class="container">
@@ -289,23 +220,73 @@
 				</div>
 			</div>
 			<div class="container animate-box">
-				<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg);">
+				<div class="fh5co-video fh5co-bg" style="position: relative; background-image: url('images/img_bg_3.jpg'); background-size: cover; background-position: center;">
 					<iframe 
 						width="100%" 
 						height="500" 
-						src="https://youtube.com/shorts/H8632Hf2Kcc?feature=share" 
+						src="https://youtu.be/hEFtTaZNpiM?si=zhjyRLfQfCvQIKKn" 
 						frameborder="0" 
 						allow="autoplay; encrypted-media" 
-						allowfullscreen>
+						allowfullscreen
+						class="video-frame"
+						aria-label="Video Highlight"
+						role="region" 
+						aria-labelledby="fh5co-heading">
 					</iframe>
+	
+					<!-- Custom Play Button Overlay -->
+					<div class="play-button-overlay">
+						<i class="icon-play-circle"></i>
+					</div>
 				</div>
 			</div>
+		</div>
+		<div class="gototop js-top">
+			<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 		</div>
 	</div>
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-
+	<footer id="fh5co-footer" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<!-- Footer Logo -->
+				<div class="col-md-4 col-sm-6 fh5co-footer-widget">
+					<h3>Megha & Anil</h3>
+					<!-- <img src="images/MA.png" alt="Wedding Logo" style="max-width: 150px; margin-top: 10px;"> -->
+					<p>Thank you for joining us in celebrating our special day!</p>
+				</div>
+	
+				<!-- Quick Links -->
+				<div class="col-md-4 col-sm-6 fh5co-footer-widget">
+					<h3>Quick Links</h3>
+					<ul class="fh5co-footer-links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="#fh5co-header">Wedding Details</a></li>
+					</ul>
+				</div>
+	
+				<!-- Social Media Links -->
+				<div class="col-md-4 col-sm-12 fh5co-footer-widget">
+					<h3>Stay Connected</h3>
+					<ul class="fh5co-social-icons">
+						<li><a href="#"><i class="icon-facebook"></i> Facebook</a></li>
+						<li><a href="#"><i class="icon-instagram"></i> Instagram</a></li>
+						<li><a href="#"><i class="icon-twitter"></i> Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+	
+			<!-- Footer Copyright -->
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>&copy; 2024 Megha & Anil. All Rights Reserved. | Made with ❤️</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			var popup = document.getElementById('welcomePopup');
@@ -323,18 +304,25 @@
 				}
 			});
 		});
+
+		document.querySelector('.fh5co-video').addEventListener('mouseover', function() {
+			document.querySelector('.play-button-overlay').style.opacity = 1;
+		});
+
+		document.querySelector('.fh5co-video').addEventListener('mouseout', function() {
+			document.querySelector('.play-button-overlay').style.opacity = 0;
+		});
+
+		document.addEventListener("DOMContentLoaded", function () {
+			setTimeout(function () {
+				document.getElementById('loader').style.display = 'none';
+				document.getElementById('gallery-page').style.display = 'block';
+			}, 2000); // Loader lasts 3 seconds
+		});
+
 	</script>
 	
 	
-	 
-	 
-	<script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/modernizr.custom.js"></script>
-    <script src="assets/js/jquery-plugin-collection.js"></script>
-
-    <script src="assets/js/script.js"></script> 
-
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
     <!-- clock -->
@@ -362,6 +350,6 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-	<center>View Source Code on <a href="https://github.com/Meghajos/wedding-website">GitHub <img src="images/github-logo.png"> </a> </center>
+	<!-- <center>View Source Code on <a href="https://github.com/Meghajos/wedding-website">GitHub <img src="images/github-logo.png"> </a> </center> -->
 	</body>
 </html>

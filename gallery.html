@@ -71,6 +71,12 @@
     
 </head>
 <body>
+    <div id="loader">
+		<div class="loader-content">
+			<h2 class="loader-text">M <span>&#10084;</span> A</h2>
+			<p>Loading your memories...</p>
+		</div>
+	</div>
     <div id="page">
     <nav class="fh5co-nav" role="navigation">
         <div class="container">
@@ -111,7 +117,7 @@
     <!-- Gallery Section -->
     <div class="gallery">
         <div class="gallery-item">
-            <img src="images/DSC06125.JPG" alt="Wedding Photo 1">
+            <img src="images/DSC06125.JPG" alt="Wedding Photo 1" >
             <div class="download-overlay">
                 <a href="images/DSC06125.JPG" download="Wedding_Photo_1">Download</a>
             </div>
@@ -135,6 +141,57 @@
 
         <!-- Add more gallery items as needed -->
     </div>
+
+    <footer id="fh5co-footer" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<!-- Footer Logo -->
+				<div class="col-md-4 col-sm-6 fh5co-footer-widget">
+					<h3>Megha & Anil</h3>
+					<!-- <img src="images/MA.png" alt="Wedding Logo" style="max-width: 150px; margin-top: 10px;"> -->
+					<p>Thank you for joining us in celebrating our special day!</p>
+				</div>
+	
+				<!-- Quick Links -->
+				<div class="col-md-4 col-sm-6 fh5co-footer-widget">
+					<h3>Quick Links</h3>
+					<ul class="fh5co-footer-links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="#fh5co-header">Wedding Details</a></li>
+					</ul>
+				</div>
+	
+				<!-- Social Media Links -->
+				<div class="col-md-4 col-sm-12 fh5co-footer-widget">
+					<h3>Stay Connected</h3>
+					<ul class="fh5co-social-icons">
+						<li><a href="#"><i class="icon-facebook"></i> Facebook</a></li>
+						<li><a href="#"><i class="icon-instagram"></i> Instagram</a></li>
+						<li><a href="#"><i class="icon-twitter"></i> Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+	
+			<!-- Footer Copyright -->
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>&copy; 2024 Megha & Anil. All Rights Reserved. | Made with ❤️</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('gallery-page').style.display = 'block';
+            }, 2000); // Loader lasts 3 seconds
+        });
+    </script>
+        
+        
 
     <!-- Include necessary JS files -->
     <script src="js/jquery.min.js"></script>

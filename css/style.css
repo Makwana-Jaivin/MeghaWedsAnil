@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -766,13 +766,13 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 .fh5co-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   color: #646464;
   padding-left: 10px;
   padding-right: 10px;
@@ -797,7 +797,7 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 0;
   top: .05em;
   font-family: 'icomoon';
-  speak: none;
+  /* speak: none; */
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1184,7 +1184,7 @@ form label {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   width: 100px;
   height: 100px;
 }
@@ -1438,7 +1438,7 @@ form label {
   position: absolute;
   right: 0px;
   font-family: 'icomoon';
-  speak: none;
+  /* speak: none;/ */
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1796,7 +1796,7 @@ form label {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url(../images/loader.gif) center no-repeat #fff;
+  /* background: url(../images/loader.gif) center no-repeat #fff; */
 }
 
 .js .animate-box {
@@ -1887,3 +1887,166 @@ form label {
   }
 }
 
+/* Footer Styling */
+#fh5co-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.fh5co-footer-widget h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.fh5co-footer-links li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.fh5co-footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.fh5co-footer-links a:hover {
+  color: #00c6ff;
+}
+
+.fh5co-social-icons li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.fh5co-social-icons a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.fh5co-social-icons a:hover {
+  color: #00c6ff;
+}
+
+#fh5co-footer p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.fh5co-video {
+  position: relative;
+  border-radius: 10px; /* Rounded corners for the video container */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.fh5co-video:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.video-frame {
+  transition: transform 0.3s ease-in-out;
+  border-radius: 8px; /* Rounded corners for iframe */
+}
+
+.video-frame:hover {
+  transform: scale(1.05); /* Slight zoom effect on iframe hover */
+}
+
+/* Play button overlay */
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.fh5co-video:hover .play-button-overlay {
+  opacity: 1; /* Show the play button on hover */
+}
+
+/* Scroll to Top Button */
+.js-gotop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.js-gotop:hover {
+  background-color: #0056b3;
+}
+
+/* Adjust for smaller screen sizes */
+@media (max-width: 768px) {
+  .fh5co-video iframe {
+    height: 300px; /* Smaller iframe on mobile */
+  }
+  .fh5co-heading h2 {
+    font-size: 24px; /* Smaller heading */
+  }
+}
+
+
+
+/* loader css */
+
+/* Full-screen Loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f9f7f6; /* Subtle background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+/* Loader Text Styling */
+.loader-content {
+  text-align: center;
+}
+
+.loader-text {
+  font-size: 3rem;
+  font-family: 'Dancing Script', cursive; /* A beautiful cursive font */
+  animation: fadeInOut 1.5s infinite;
+  color: #b56576;
+}
+
+/* Heart Symbol Color */
+.loader-text span {
+  color: #e63946;
+}
+
+/* Subtext Below */
+.loader-content p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
