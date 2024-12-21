@@ -1,0 +1,238 @@
+.clothesline-gallery {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    padding: 60px 20px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+
+  .clothesline {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 80px;
+    left: 0;
+    background: #ffc0cb;
+    transform: rotate(-2deg);  
+    border-radius: 100px; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .clothesline::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 1px;
+    left: -10%;
+    background: #ffc0cb;
+    transform: translateY(-50%) skewX(0deg);  
+    border-radius: 100px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .photos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .photo-frame {
+    position: relative;
+    transform-origin: center top;
+    transition: all 0.3s ease;
+  }
+
+  .photo-frame:nth-child(1) { transform: translateY(20px) rotate(-2deg); }
+  .photo-frame:nth-child(2) { transform: translateY(10px) rotate(2deg); }
+  .photo-frame:nth-child(3) { transform: translateY(0) rotate(-2deg); }
+  .photo-frame:nth-child(4) { transform: translateY(10px) rotate(2deg); }
+  .photo-frame:nth-child(5) { transform: translateY(20px) rotate(-2deg); }
+
+  .photo-frame:hover {
+    transform: translateY(10px) rotate(0) scale(1.05);
+    z-index: 10;
+  }
+
+  .clothespin {
+    position: absolute;
+    width: 16px;
+    height: 30px;
+    background-color: #f4d03f;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .photo {
+    padding: 10px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .photo img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 1200px) {
+    .photos-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .photo-frame {
+      margin: 20px 10px;
+    }
+  
+    .clothesline {
+      display: none;
+    }
+  }
+
+
+
+   .clothespin {
+    position: absolute;
+    width: 20px;
+    height: 35px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, 
+      #deb887 0%, 
+      #cd853f 25%, 
+      #deb887 50%, 
+      #cd853f 75%, 
+      #deb887 100%
+    );
+    border-radius: 3px;
+    box-shadow: -1px 1px 2px rgba(0,0,0,0.2);
+
+    background-size: 20px 35px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 1px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 6px;
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent 40%,
+          #8b4513 40%,
+          #8b4513 60%,
+          transparent 60%,
+          transparent 100%
+        );
+    }
+  }
+
+
+  .clothespin.metal {
+    background: linear-gradient(90deg, 
+      #c0c0c0 0%, 
+      #a9a9a9 25%, 
+      #c0c0c0 50%, 
+      #a9a9a9 75%, 
+      #c0c0c0 100%
+    );
+    box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+    &::before {
+      background: rgba(0,0,0,0.2);
+    }
+    &::after {
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent 40%,
+          #808080 40%,
+          #808080 60%,
+          transparent 60%,
+          transparent 100%
+        );
+    }
+  }
+
+
+  .clothespin.vintage {
+    background: linear-gradient(90deg, 
+      #d4b895 0%, 
+      #c3a284 25%, 
+      #d4b895 50%, 
+      #c3a284 75%, 
+      #d4b895 100%
+    );
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    &::before {
+      background: rgba(139, 69, 19, 0.2);
+    }
+    &::after {
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent 40%,
+          #8b4513 40%,
+          #8b4513 60%,
+          transparent 60%,
+          transparent 100%
+        );
+      opacity: 0.7;
+    }
+  }
+
+
+  .clothespin.colorful {
+    background: linear-gradient(90deg, 
+      #ff7f50 0%, 
+      #ff6347 25%, 
+      #ff7f50 50%, 
+      #ff6347 75%, 
+      #ff7f50 100%
+    );
+    &::before {
+      background: rgba(255,255,255,0.3);
+    }
+    &::after {
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent 40%,
+          #ff4500 40%,
+          #ff4500 60%,
+          transparent 60%,
+          transparent 100%
+        );
+    }
+  }
+
+  
