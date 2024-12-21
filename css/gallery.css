@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -79,4 +79,188 @@ body {
   display: block; 
   border-radius: 10px; 
 }
+ */
 
+/* Gallery Container */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between items */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px; /* Optional: Center align gallery and limit max width */
+  box-sizing: border-box;
+}
+
+/* Gallery Item */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Image Styling */
+.gallery-item img {
+  width: 100%; /* Ensures responsiveness */
+  height: auto; /* Maintains aspect ratio */
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  border: 20px solid #fff; /* Outer white border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Inner Border (Double-Border Effect) */
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  top: 10px; /* Offset from the inner border */
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid #d1d1d1; /* Inner border color */
+  border-radius: 10px; /* Match the image's border-radius */
+  pointer-events: none; /* Ensure it doesn't block hover effects */
+}
+
+/* Hover Effect */
+.gallery-item:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+  .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns on smaller screens */
+      gap: 15px; /* Adjust spacing for smaller screens */
+  }
+
+  .gallery-item img {
+      border: 10px solid #fff; /* Slightly smaller border on mobile */
+  }
+
+  .gallery-item::after {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+      grid-template-columns: 1fr; /* One column on very small screens */
+      gap: 10px;
+  }
+
+  .gallery-item img {
+      border: 20px solid #fff; /* Small border for very small screens */
+  }
+
+  .gallery-item::after {
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px; /* Adjust for very small screens */
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Bring to front */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Bring to front */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  max-width: 90%; /* Adjust size for large images */
+  max-height: 90%; /* Maintain aspect ratio */
+  border: 5px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Download Button */
+.download-btn {
+  margin-top: 20px;
+  background-color: #007bff; /* Button color */
+  color: white;
+  padding: 10px 20px;
+  border: 5px solid #ffffff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.download-btn:hover {
+  background-color: #0056b3; /* Darker on hover */
+  border-color: #0056b3; /* Change the border color on hover */
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 120%;
+    max-height: 120%; 
+    object-fit: contain; 
+  }
+
+  .download-btn {
+    font-size: 14px; /* Slightly smaller font on mobile */
+    padding: 9px 20px;
+    border: 5px solid #ffffff;
+    margin-left: 5px;
+  }
+}
+
+/* Very Small Screen Adjustments */
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 70%; /* Even smaller width for very small screens */
+    max-height: 70%; /* Adjust height for tiny screens */
+    object-fit: contain; /* Ensure image fits well */
+  }
+
+  .download-btn {
+    font-size: 12px; /* Smaller font on very small screens */
+    padding: 6px 12px; 
+    border: 5px solid #ffffff;
+  }
+}

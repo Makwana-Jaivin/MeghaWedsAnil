@@ -235,4 +235,173 @@
     }
   }
 
+  .clothespin.wooden {
+    background: linear-gradient(90deg, 
+      #b98b56 0%, 
+      #c59d77 25%, 
+      #b98b56 50%, 
+      #c59d77 75%, 
+      #b98b56 100%
+    );
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.2);
+    &::before {
+      background: rgba(139, 69, 19, 0.2);
+    }
+    &::after {
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%, 
+          transparent 40%, 
+          #8b4513 40%, 
+          #8b4513 60%, 
+          transparent 60%, 
+          transparent 100%
+        );
+      opacity: 0.8;
+    }
+  }
+
+  .clothespin.plastic {
+    background: linear-gradient(90deg, 
+      #00bfff 0%, 
+      #87cefa 25%, 
+      #00bfff 50%, 
+      #87cefa 75%, 
+      #00bfff 100%
+    );
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+    &::before {
+      background: rgba(0, 0, 0, 0.15);
+    }
+    &::after {
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%, 
+          transparent 40%, 
+          #1e90ff 40%, 
+          #1e90ff 60%, 
+          transparent 60%, 
+          transparent 100%
+        );
+    }
+  }
+
+  .clothespin.striped {
+    background: linear-gradient(90deg, 
+      #f44336 0%, 
+      #ff9800 25%, 
+      #4caf50 50%, 
+      #2196f3 75%, 
+      #9c27b0 100%
+    );
+    background-size: 40px 35px;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.2);
+    &::before {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    &::after {
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%, 
+          transparent 40%, 
+          #000000 40%, 
+          #000000 60%, 
+          transparent 60%, 
+          transparent 100%
+        );
+    }
+  }
+
+  .clothespin.rainbow {
+    background: linear-gradient(90deg, 
+      #ff0000 0%, 
+      #ff9900 25%, 
+      #33cc33 50%, 
+      #3399ff 75%, 
+      #cc33cc 100%
+    );
+    background-size: 20px 35px;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3);
+    &::before {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::after {
+      background: 
+        linear-gradient(
+          to bottom,
+          transparent 0%, 
+          transparent 40%, 
+          #ff4500 40%, 
+          #ff4500 60%, 
+          transparent 60%, 
+          transparent 100%
+        );
+    }
+  }
+
+  .clothespin.custom {
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    background: linear-gradient(45deg, 
+      #8b4513 0%, 
+      #deb887 50%, 
+      #8b4513 100%
+    );
+    border-radius: 8px 8px 10px 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-size: 20px 20px; /* Texture-like look */
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    z-index: 15;
+  }
+  
+  /* Unique Worn-Down Effects with Clip-path for the clothespin */
+  .clothespin.custom::before {
+    content: 'M';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%) scale(1.4) rotate(5deg);
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+  }
+  
+  .clothespin.custom::after {
+    content: 'A';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%) scale(1.4) rotate(-5deg);
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+  }
+  
+  /* Add hover animation for interactivity */
+  .clothespin.custom:hover {
+    transform: translateX(-50%) rotate(0deg) scale(1.1);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2), 3px 3px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Optionally add a slight tilt for more dynamic interaction */
+  .clothespin.custom:active {
+    transform: translateX(-50%) rotate(-3deg) scale(1);
+  }
   

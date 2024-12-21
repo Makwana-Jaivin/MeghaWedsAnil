@@ -4,7 +4,7 @@
 .event-section {
   text-align: center;
   padding: 50px 20px;
-  background-color: #f9f9f9;
+  background-color: #f3f2f2;
 }
 
 .section-title {
@@ -34,7 +34,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 200px;
+  width: 250px;
   transition: transform 0.3s ease-in-out;
 }
 
