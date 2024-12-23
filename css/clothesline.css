@@ -1,104 +1,163 @@
 .clothesline-gallery {
-    position: relative;
-    width: 100%;
-    min-height: 600px;
-    padding: 60px 20px;
-    overflow: hidden;
-    background: #fff;
-  }
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  padding: 60px 20px;
+  overflow: hidden;
+  background: #fff;
+}
 
+/* Modify clothesline for better curve */
+.clothesline {
+  position: absolute;
+  top: 80px;
+  left: -10%;
+  width: 120%;
+  height: 1px;
+}
 
-  .clothesline {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    top: 80px;
-    left: 0;
-    background: #ffc0cb;
-    transform: rotate(-2deg);  
-    border-radius: 100px; 
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
+/* Create natural drooping clothesline */
+.clothesline::before,
+.clothesline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #ffc0cb;
+  top: 0;
+}
 
-  .clothesline::before {
-    content: '';
-    position: absolute;
-    width: 120%;
-    height: 1px;
-    left: -10%;
-    background: #ffc0cb;
-    transform: translateY(-50%) skewX(0deg);  
-    border-radius: 100px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
+/* First line for depth */
+.clothesline::before {
+  transform: translateY(0);
+  clip-path: path('M0,0 Q25%,50 50%,60 T100%,0');
+  opacity: 0.7;
+}
 
+/* Second line for depth effect */
+.clothesline::after {
+  transform: translateY(-1px);
+  clip-path: path('M0,0 Q25%,45 50%,55 T100%,0');
+}
+
+/* Add string shadow */
+.clothesline-shadow {
+  position: absolute;
+  top: 82px;
+  left: -10%;
+  width: 120%;
+  height: 1px;
+  opacity: 0.3;
+  filter: blur(1px);
+  background: #ffc0cb;
+  clip-path: path('M0,0 Q25%,55 50%,65 T100%,0');
+}
+
+/* Rest of the styles remain the same */
+.photos-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  height: 500px;
+}
+
+.photo-frame {
+  position: absolute;
+  transform-origin: center -25px;
+  transition: all 0.3s ease;
+  animation: swing 4s ease-in-out infinite alternate;
+  background: white;
+  padding: 15px 15px 40px 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.photo-frame:nth-child(1) { left: 5%; top: 20px; animation-delay: 0s; }
+.photo-frame:nth-child(2) { left: 25%; top: 50px; animation-delay: -0.5s; }
+.photo-frame:nth-child(3) { left: 45%; top: 60px; animation-delay: -1s; }
+.photo-frame:nth-child(4) { left: 65%; top: 50px; animation-delay: -1.5s; }
+.photo-frame:nth-child(5) { left: 85%; top: 20px; animation-delay: -2s; }
+
+@keyframes swing {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+.photo-frame:hover {
+  transform: translateY(-5px) rotate(0) scale(1.05);
+  z-index: 10;
+  animation-play-state: paused;
+}
+
+.clothespin {
+  position: absolute;
+  width: 20px;
+  height: 35px;
+  background-color: #d4b895;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.clothespin::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #c4a885;
+  top: 5px;
+  border-radius: 2px;
+}
+
+.photo {
+  position: relative;
+  background: white;
+}
+
+.photo img {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  border: 8px solid white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.photo::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
   .photos-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    height: auto;
     padding-top: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 10px;
   }
 
   .photo-frame {
     position: relative;
-    transform-origin: center top;
-    transition: all 0.3s ease;
+    margin: 20px 10px;
+    left: auto !important;
+    top: auto !important;
+    animation: none;
   }
 
-  .photo-frame:nth-child(1) { transform: translateY(20px) rotate(-2deg); }
-  .photo-frame:nth-child(2) { transform: translateY(10px) rotate(2deg); }
-  .photo-frame:nth-child(3) { transform: translateY(0) rotate(-2deg); }
-  .photo-frame:nth-child(4) { transform: translateY(10px) rotate(2deg); }
-  .photo-frame:nth-child(5) { transform: translateY(20px) rotate(-2deg); }
-
-  .photo-frame:hover {
-    transform: translateY(10px) rotate(0) scale(1.05);
-    z-index: 10;
+  .clothesline {
+    display: none;
   }
-
-  .clothespin {
-    position: absolute;
-    width: 16px;
-    height: 30px;
-    background-color: #f4d03f;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  }
-
-  .photo {
-    padding: 10px;
-    background: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-
-  .photo img {
-    width: 220px;
-    height: 280px;
-    object-fit: cover;
-    display: block;
-  }
-
-  @media (max-width: 1200px) {
-    .photos-container {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    
-    .photo-frame {
-      margin: 20px 10px;
-    }
-  
-    .clothesline {
-      display: none;
-    }
-  }
+}
 
 
 
