@@ -37,7 +37,7 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-
+	<link rel="stylesheet" href="css/header.css">
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -78,64 +78,28 @@
             
         </div>
     </nav>
-    
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/background.jpg);" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="display-t">
-                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>Megha &amp; Anil</h1>
-                            <br>
-                            <img src="images/fprint.png" alt="Megha + Anil">
-                            <h2>13.02.2025</h2>
-                            <h2>"I have found the one whom my soul loves." <br>Song of Solomon 3:4</h2>
-                            <div class="flipTimebox">
-                                <div class="clock clock-fix" id="countdown"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+
+	<header class="modern-header">
+		<div class="header-border"></div>
+		<div class="initials-circle">M&A</div>
+		<div class="announcement">Together in Love</div>
+		<div class="couple-names">Megha & Anil<br>Are Getting Married</div>
+		<div class="date-location">February 13, 2025 • Ahmedabad</div>
+
+		<nav class="header-nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+			</ul>
+		</nav>
+
+	</header>
+
+	
     
     <!-- Gallery Section -->
-    <!-- <div class="gallery">
-        <div class="gallery-item left">
-            <img src="images/DSC06125.JPG" alt="Wedding Photo 1" >
-            <div class="download-overlay">
-                <a href="images/DSC06125.JPG" download="Wedding_Photo_1">Download</a>
-            </div>
-        </div>
-        <div class="gallery-item right">
-            <img src="images/DSC06192.JPG" alt="Wedding Photo 2">
-            <div class="download-overlay">
-                <a href="images/DSC06192.JPG" download="Wedding_Photo_2">Download</a>
-            </div>
-        </div>
-        <div class="gallery-item left">
-            <img src="images/DSC06125.JPG" alt="Wedding Photo 3">
-            <div class="download-overlay">
-                <a href="images/DSC06125.JPG" download="Wedding_Photo_3">Download</a>
-            </div>
-        </div>
-        <div class="gallery-item right">
-            <img src="images/DSC06125.JPG" alt="Wedding Photo 4">
-            <div class="download-overlay">
-                <a href="images/DSC06125.JPG" download="Wedding_Photo_4">Download</a>
-            </div>
-        </div>
-        <div class="gallery-item left">
-            <img src="images/DSC06125.JPG" alt="Wedding Photo 5">
-            <div class="download-overlay">
-                <a href="images/DSC06125.JPG" download="Wedding_Photo_5">Download</a>
-            </div>
-        </div>
-    </div>  -->
 
-	<div class="gallery">
+	<!-- <div class="gallery">
 		<div class="gallery-grid">
 			<div class="gallery-item">
 				<img src="images/DSC06125.JPG" alt="Wedding Photo 1" onclick="openModal('images/1.jpg')" style="width: 200px; cursor: pointer;">
@@ -156,61 +120,203 @@
 				<img src="images/DSC06125.JPG" alt="Wedding Photo 6" onclick="openModal('images/photo1.jpg')">
 			</div>
 		</div>
-	</div>
+	</div> -->
+
+	<div class="gallery-section">
+        <div class="header-container">
+			<div class="heart-box" onclick="toggleGallery('preWedding')">
+				<div class="box-text">Pre Wedding Photos</div>
+			</div>
+	
+			<div class="heart-box" onclick="toggleGallery('tenDaysToGo')">
+				<div class="box-text">Pre Wedding Photos</div>
+			</div>
+		</div>
+
+        <div id="preWeddingGallery" class="gallery-grid">
+            <div class="gallery-item">
+				<img src="images/DSC06125.JPG" alt="Pre Wedding Photo 1">
+				<div class="overlay">
+					<button class="view-btn" onclick="openModal('images/DSC06125.jpg')">View Photo</button>
+					<a href="images/DSC06125.JPG" download class="download-btn">Download Photo</a>
+				</div>
+			</div>
+            <div class="gallery-item">
+                <img src="images/DSC06192.JPG" alt="Pre Wedding Photo 2">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal('images/DSC06125.jpg')">View Photo</button>
+                </div>
+            </div>
+			<div class="gallery-item">
+                <img src="images/DSC06125.JPG" alt="Pre Wedding Photo 2">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal('images/DSC06125.jpg')">View Photo</button>
+                </div>
+            </div>
+			<div class="gallery-item">
+                <img src="images/DSC06192.JPG" alt="Pre Wedding Photo 2">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal('images/DSC06125.jpg')">View Photo</button>
+                </div>
+            </div>
+			<div class="gallery-item">
+                <img src="images/DSC06192.JPG" alt="Pre Wedding Photo 2">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal('images/DSC06125.jpg')">View Photo</button>
+                </div>
+            </div>
+			<div class="gallery-item">
+                <img src="images/DSC06192.JPG" alt="Pre Wedding Photo 2">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal('images/DSC06125.jpg')">View Photo</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tenDaysToGoGallery" class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/10_days_1.jpg" alt="10 Days Photo 1">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal('images/10_days_1.jpg')">View Photo</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/10_days_2.jpg" alt="10 Days Photo 2">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal('images/10_days_2.jpg')">View Photo</button>
+                </div>
+            </div>
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
 
 	<div id="imageModal" class="modal" style="display: none;">
 		<span class="close" onclick="closeModal()">&times;</span>
 		<img class="modal-content" id="modalImage">
-		<a id="downloadLink" href="#" download>
+		<!-- <a id="downloadLink" href="#" download>
 			<button class="download-btn">Download</button>
-		</a>
+		</a> -->
 	</div>
 
-    <footer id="fh5co-footer" class="fh5co-section-gray">
-		<div class="container">
-			<div class="row">
-				<!-- Footer Logo -->
-				<div class="col-md-4 col-sm-6 fh5co-footer-widget">
-					<h3>Megha & Anil</h3>
-					<!-- <img src="images/MA.png" alt="Wedding Logo" style="max-width: 150px; margin-top: 10px;"> -->
-					<p>Thank you for joining us in celebrating our special day!</p>
-				</div>
-	
-				<!-- Quick Links -->
-				<div class="col-md-4 col-sm-6 fh5co-footer-widget">
-					<h3>Quick Links</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="gallery.html">Gallery</a></li>
-					</ul>
-				</div>
-	
-				<!-- Social Media Links -->
-				<div class="col-md-4 col-sm-12 fh5co-footer-widget">
-					<h3>Stay Connected</h3>
-					<ul class="fh5co-social-icons">
-						<li><a href="#"><i class="icon-facebook"></i> Facebook</a></li>
-						<li><a href="#"><i class="icon-instagram"></i> Instagram</a></li>
-						<li><a href="#"><i class="icon-twitter"></i> Twitter</a></li>
-					</ul>
-				</div>
+	<footer class="modern-footer">
+		<div class="footer-content">
+		  <div class="footer-flourish">✤</div>
+		  <div class="timeline">
+			<div class="timeline-item">
+			  <div class="timeline-date">Contact</div>
+			  <div class="timeline-event"><a href="">9913322321</a></div>
 			</div>
-	
-			<!-- Footer Copyright -->
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<p>&copy; 2024 Megha & Anil. All Rights Reserved. | Made with ❤️</p>
-				</div>
+			<div class="timeline-item">
+			  <div class="timeline-date">6:30 PM</div>
+			  <div class="timeline-event">Cocktails</div>
 			</div>
+		  </div>
+		  <div class="footer-hashtag">#MEGHNIL</div>
 		</div>
 	</footer>
 
     <script>
+				// Function to toggle the visibility of a specific gallery section
+		let touchStartY = 0;
+		let touchEndY = 0;
+
+		function toggleGallery(section) {
+		const preWeddingGallery = document.getElementById('preWeddingGallery');
+		const tenDaysToGoGallery = document.getElementById('tenDaysToGoGallery');
+		
+		if (section === 'preWedding') {
+			if (!preWeddingGallery.classList.contains('active')) {
+			preWeddingGallery.style.display = 'grid';
+			tenDaysToGoGallery.classList.remove('active');
+			
+			setTimeout(() => {
+				preWeddingGallery.classList.add('active');
+				tenDaysToGoGallery.style.display = 'none';
+			}, 50);
+			} else {
+			preWeddingGallery.classList.remove('active');
+			setTimeout(() => {
+				preWeddingGallery.style.display = 'none';
+			}, 500);
+			}
+		} else if (section === 'tenDaysToGo') {
+			if (!tenDaysToGoGallery.classList.contains('active')) {
+			tenDaysToGoGallery.style.display = 'grid';
+			preWeddingGallery.classList.remove('active');
+			
+			setTimeout(() => {
+				tenDaysToGoGallery.classList.add('active');
+				preWeddingGallery.style.display = 'none';
+			}, 50);
+			} else {
+			tenDaysToGoGallery.classList.remove('active');
+			setTimeout(() => {
+				tenDaysToGoGallery.style.display = 'none';
+			}, 500);
+			}
+		}
+		}
+
+		function openModal(imageSrc) {
+		const modal = document.getElementById('imageModal');
+		const modalImage = document.getElementById('modalImage');
+		
+		modal.style.display = 'flex';
+		modalImage.src = imageSrc;
+		
+		modalImage.style.opacity = '0';
+		modalImage.style.transform = 'scale(0.9)';
+		
+		setTimeout(() => {
+			modalImage.style.transition = 'all 0.3s ease';
+			modalImage.style.opacity = '1';
+			modalImage.style.transform = 'scale(1)';
+		}, 50);
+
+		// Disable body scroll when modal is open
+		document.body.style.overflow = 'hidden';
+		}
+
+		function closeModal() {
+		const modal = document.getElementById('imageModal');
+		const modalImage = document.getElementById('modalImage');
+		
+		modalImage.style.opacity = '0';
+		modalImage.style.transform = 'scale(0.9)';
+		
+		setTimeout(() => {
+			modal.style.display = 'none';
+			modalImage.style.transition = '';
+			modalImage.style.transform = '';
+			// Re-enable body scroll
+			document.body.style.overflow = 'auto';
+		}, 300);
+		}
+
+		// Mobile touch handling for modal
+		document.getElementById('imageModal').addEventListener('touchstart', (e) => {
+		touchStartY = e.touches[0].clientY;
+		});
+
+		document.getElementById('imageModal').addEventListener('touchend', (e) => {
+		touchEndY = e.changedTouches[0].clientY;
+		if (touchEndY - touchStartY > 50) {
+			closeModal();
+		}
+		});
+
+		// Close modal when clicking outside
+		document.getElementById('imageModal').addEventListener('click', function(e) {
+		if (e.target === this) {
+			closeModal();
+		}
+		});
+
         document.addEventListener("DOMContentLoaded", function () {
             setTimeout(function () {
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('gallery-page').style.display = 'block';
-            }, 2000); 
+            }, 1000); 
         });
 
 		function openModal(imageSrc) {
@@ -233,6 +339,7 @@
         
 
     <!-- Include necessary JS files -->
+	<script>js/gallery.js</script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     	<!-- jQuery -->

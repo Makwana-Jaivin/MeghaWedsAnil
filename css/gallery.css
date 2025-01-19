@@ -1,266 +1,298 @@
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .gallery-item {
-    position: relative;
-    width: 300px;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .gallery-item img {
-    width: 100px;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
-  
-  .download-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .download-overlay a {
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-    background: #007bff;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  
-  .download-overlay a:hover {
-    background: #0056b3;
-  }
-  
-  .gallery-item:hover .download-overlay {
-    opacity: 1;
-  }
-  
-
-
-  .gallery-item {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-}
-.gallery-item:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto; 
-  display: block; 
-  border-radius: 10px; 
-}
- */
-
-/* Gallery Container */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Space between items */
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px; /* Optional: Center align gallery and limit max width */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Gallery Item */
+body {
+  font-family: 'Times New Roman', sans-serif;
+  background-color: #fff5f5;
+  min-height: 100vh;
+}
+
+.gallery-section {
+  max-width: min(1200px, 95%);
+  margin: 0 auto;
+  padding: clamp(10px, 3vw, 20px);
+}
+
+.gallery-headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(20px, 5vw, 40px);
+  padding: 0 clamp(10px, 2vw, 20px);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gallery-headers h3 {
+  font-size: clamp(24px, 4vw, 32px);
+  color: #F39C12;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.gallery-headers h3:hover {
+  transform: scale(1.05);
+  color: #e74c3c;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: clamp(10px, 2vw, 20px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-grid.active {
+  opacity: 1;
+  transform: translateY(0);
+  display: grid;
+}
+
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 10px; /* Rounded corners */
-}
-
-/* Image Styling */
-.gallery-item img {
-  width: 100%; /* Ensures responsiveness */
-  height: auto; /* Maintains aspect ratio */
-  display: block;
-  transition: transform 0.3s ease-in-out;
-  border: 20px solid #fff; /* Outer white border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Inner Border (Double-Border Effect) */
-.gallery-item::after {
-  content: '';
-  position: absolute;
-  top: 10px; /* Offset from the inner border */
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border: 2px solid #d1d1d1; /* Inner border color */
-  border-radius: 10px; /* Match the image's border-radius */
-  pointer-events: none; /* Ensure it doesn't block hover effects */
-}
-
-/* Hover Effect */
-.gallery-item:hover img {
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-
-/* Mobile-Friendly Adjustments */
-@media (max-width: 768px) {
-  .gallery {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns on smaller screens */
-      gap: 15px; /* Adjust spacing for smaller screens */
-  }
-
-  .gallery-item img {
-      border: 10px solid #fff; /* Slightly smaller border on mobile */
-  }
-
-  .gallery-item::after {
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px; /* Adjust for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery {
-      grid-template-columns: 1fr; /* One column on very small screens */
-      gap: 10px;
-  }
-
-  .gallery-item img {
-      border: 20px solid #fff; /* Small border for very small screens */
-  }
-
-  .gallery-item::after {
-      top: 5px;
-      left: 5px;
-      right: 5px;
-      bottom: 5px; /* Adjust for very small screens */
-  }
-}
-
-/* Modal Styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000; /* Bring to front */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
-}
-
-/* Modal Styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000; /* Bring to front */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-}
-
-/* Modal Content (Image) */
-.modal-content {
-  max-width: 90%; /* Adjust size for large images */
-  max-height: 90%; /* Maintain aspect ratio */
-  border: 5px solid #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
+  background: white;
+  padding: clamp(8px, 2vw, 15px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 2/3;
 }
 
-/* Close Button */
-.close {
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
   position: absolute;
-  top: 20px;
-  right: 40px;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  flex-direction: column;
 }
 
-/* Download Button */
-.download-btn {
-  margin-top: 20px;
-  background-color: #007bff; /* Button color */
+.view-btn {
+  padding: clamp(8px, 2vw, 10px) clamp(16px, 3vw, 20px);
+  background: lightpink;
   color: white;
-  padding: 10px 20px;
-  border: 5px solid #ffffff;
-  border-radius: 5px;
-  font-size: 16px;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s;
-  margin-left: 10px;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
-.download-btn:hover {
-  background-color: #0056b3; /* Darker on hover */
-  border-color: #0056b3; /* Change the border color on hover */
+.view-btn:hover {
+  transform: scale(1) !important ;  
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: min(90%, 1200px);
+  max-height: 90vh;
+  position: relative;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 3vw, 20px);
+  padding: clamp(10px, 3vw, 20px);
+  font-family: 'Arial', sans-serif;
+  flex-wrap: wrap;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Space between boxes */
+  align-items: center; /* Vertically center the boxes */
+  gap: clamp(20px, 5vw, 30px); /* Adjust the gap between boxes */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  padding: clamp(10px, 3vw, 20px); /* Adjust padding */
+}
+
+.heart-box {
+  position: relative;
+  padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 25px);
+  background: white;
+  border: 2px solid #FF7F7F;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  width: min(500px, 45%);
+  flex: 1 1 45%;
+  text-align: center;
+
+}
+
+.box-text {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: #FF7F7F;
+  text-align: center;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .heart-box {
+    width: min(500px, 45%); /* Ensure boxes don't exceed 45% of container width */
+  }
+}
+
+/* For smaller devices */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Stack the boxes vertically */
+    align-items: center; /* Center-align the boxes */
+  }
+
+  .heart-box {
+    width: 80%; /* Make the boxes larger on small screens */
+  }
+}
+
+@media (hover: hover) {
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+
+  .gallery-item:hover .view-btn {
+    transform: scale(1);
+  }
+
+  .heart-box:hover::before {
+    opacity: 1;
+  }
+
+  .box-container > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 127, 127, 0.2);
+  }
 }
 
 @media (max-width: 768px) {
-  .modal-content {
-    max-width: 120%;
-    max-height: 120%; 
-    object-fit: contain; 
+  .gallery-headers {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .download-btn {
-    font-size: 14px; /* Slightly smaller font on mobile */
-    padding: 9px 20px;
-    border: 5px solid #ffffff;
-    margin-left: 5px;
+  .box-container {
+    flex-direction: column;
+  }
+
+  .heart-box {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
-/* Very Small Screen Adjustments */
 @media (max-width: 480px) {
-  .modal-content {
-    max-width: 70%; /* Even smaller width for very small screens */
-    max-height: 70%; /* Adjust height for tiny screens */
-    object-fit: contain; /* Ensure image fits well */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes floatHeart {
+  0% { top: 100%; left: 10%; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: -20%; left: 90%; opacity: 0; }
+}
+/* General Styles for Download Button */
+.download-btn {
+  padding: clamp(8px, 2vw, 10px) clamp(16px, 3vw, 20px);
+  background: lightpink; 
+  color: white; 
+  border: none;
+  border-radius: 25px; 
+  cursor: pointer; 
+  transform: scale(0.8); 
+  transition: transform 0.3s ease; 
+  font-size: clamp(14px, 2vw, 16px); 
+  margin-top: 10px; 
+
+}
+.download-btn:hover {
+  transform: scale(1); 
+}
+
+
+
+/* Responsive Styles for Download Button */
+
+/* For screens larger than 768px (tablet and above) */
+@media (min-width: 768px) {
+  .download-btn {
+    font-size: clamp(14px, 2vw, 16px); 
+    padding: clamp(10px, 1.5vw, 15px) clamp(20px, 2vw, 25px); 
   }
 
+  .view-btn {
+    font-size: clamp(14px, 2vw, 16px);
+    padding: clamp(10px, 1.5vw, 15px) clamp(20px, 2vw, 25px);
+  }
+}
+
+/* For smaller screens (less than 768px) */
+@media (max-width: 768px) {
   .download-btn {
-    font-size: 12px; /* Smaller font on very small screens */
-    padding: 6px 12px; 
-    border: 5px solid #ffffff;
+    width: 100%; 
+    font-size: clamp(12px, 2vw, 14px); 
+    margin-top: 8px; 
+  }
+
+  .view-btn {
+    width: 100%; /* Make the button full width on smaller screens */
+    font-size: clamp(12px, 2vw, 14px); /* Adjust font size for smaller screens */
+    margin-top: 8px; /* Adjust spacing between buttons */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .download-btn {
+    font-size: clamp(12px, 2vw, 14px); 
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 20px); 
+    width: 100%; /* Ensure button takes full width on very small screens */
+  }
+
+  .view-btn {
+    font-size: clamp(12px, 2vw, 14px); /* Further reduce font size */
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 20px); /* Adjust padding */
+    width: 100%; /* Ensure button takes full width on very small screens */
   }
 }

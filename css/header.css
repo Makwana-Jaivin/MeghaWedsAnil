@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+  }
+
+  .modern-header {
+    background-color: #fff;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+    text-align: center;
+    position: relative;
+  }
+
+  .header-border {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #e0c9bc;
+    pointer-events: none;
+  }
+
+  .initials-circle {
+    width: clamp(80px, 15vw, 120px);
+    height: clamp(80px, 15vw, 120px);
+    border-radius: 50%;
+    background: #fdf6f3;
+    border: 2px solid #e0c9bc;
+    margin: 0 auto clamp(1rem, 3vw, 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #816b61;
+  }
+
+  .announcement {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: #816b61;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    padding: 0 1rem;
+  }
+
+  .couple-names {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #4a3c36;
+    margin-bottom: clamp(0.8rem, 2vw, 1rem);
+    line-height: 1.2;
+    padding: 0 1rem;
+  }
+
+  .date-location {
+    font-family: 'Montserrat', sans-serif;
+    color: #816b61;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    letter-spacing: 2px;
+    padding: 0 1rem;
+  }
+
+  .modern-footer {
+    background-color: #fdf6f3;
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+    text-align: center;
+    position: relative;
+  }
+
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .footer-flourish {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #e0c9bc;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+  }
+
+  .timeline-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: #816b61;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-event {
+    font-family: 'Libre Baskerville', serif;
+    color: #4a3c36;
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  }
+
+  .footer-hashtag {
+    font-family: 'Montserrat', sans-serif;
+    color: #816b61;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0 1rem;
+  }
+
+  /* Tablet and larger */
+  @media (min-width: 768px) {
+    .timeline {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .timeline-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 1px;
+      height: 30px;
+      background-color: #e0c9bc;
+      transform: translateY(-50%);
+    }
+  }
+
+  /* Larger screens */
+  @media (min-width: 1200px) {
+    .modern-header {
+      padding: 5rem 2rem;
+    }
+
+    .modern-footer {
+      padding: 4rem 2rem;
+    }
+  }
+
+/* Navigation Bar Styling */
+.header-nav {
+    margin-top: 2rem;
+}
+
+.header-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.header-nav li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #4a3c36;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.header-nav a:hover {
+    color: lightpink; 
+    text-decoration: underline;
+}
+
+/* Small devices (mobile) */
+@media (max-width: 767px) {
+    .header-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .header-nav li {
+        font-size: clamp(1.2rem, 3vw, 1.4rem); 
+    }
+}

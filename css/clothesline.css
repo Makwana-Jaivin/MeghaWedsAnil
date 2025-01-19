@@ -4,7 +4,7 @@
   min-height: 700px;
   padding: 60px 20px;
   overflow: hidden;
-  background: #fff;
+  background: #fff5f5;
 }
 
 /* Modify clothesline for better curve */
@@ -71,6 +71,11 @@
   background: white;
   padding: 15px 15px 40px 15px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  /* Add min-height to ensure consistent sizing */
+  min-height: 400px;
+  /* Add display flex to handle dynamic content */
+  display: flex;
+  flex-direction: column;
 }
 
 .photo-frame:nth-child(1) { left: 5%; top: 20px; animation-delay: 0s; }
@@ -115,15 +120,18 @@
 .photo {
   position: relative;
   background: white;
+  flex-grow: 1;
+  padding-bottom: 60px;
 }
 
 .photo img {
   width: 220px;
   height: 280px;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   border: 8px solid white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
 }
 
 .photo::after {
@@ -135,6 +143,25 @@
   height: 30px;
   background: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+.photo-caption {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: white;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 1200px) {
@@ -145,22 +172,15 @@
     height: auto;
     padding-top: 40px;
   }
-
-  .photo-frame {
-    position: relative;
-    margin: 20px 10px;
-    left: auto !important;
-    top: auto !important;
-    animation: none;
+  .photo-caption {
+    min-height: 80px;
   }
+
 
   .clothesline {
     display: none;
   }
 }
-
-
-
    .clothespin {
     position: absolute;
     width: 20px;
@@ -212,35 +232,6 @@
         );
     }
   }
-
-
-  .clothespin.metal {
-    background: linear-gradient(90deg, 
-      #c0c0c0 0%, 
-      #a9a9a9 25%, 
-      #c0c0c0 50%, 
-      #a9a9a9 75%, 
-      #c0c0c0 100%
-    );
-    box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
-    &::before {
-      background: rgba(0,0,0,0.2);
-    }
-    &::after {
-      background: 
-        linear-gradient(
-          to bottom,
-          transparent 0%,
-          transparent 40%,
-          #808080 40%,
-          #808080 60%,
-          transparent 60%,
-          transparent 100%
-        );
-    }
-  }
-
-
   .clothespin.vintage {
     background: linear-gradient(90deg, 
       #d4b895 0%, 
@@ -266,164 +257,7 @@
         );
       opacity: 0.7;
     }
-  }
-
-
-  .clothespin.colorful {
-    background: linear-gradient(90deg, 
-      #ff7f50 0%, 
-      #ff6347 25%, 
-      #ff7f50 50%, 
-      #ff6347 75%, 
-      #ff7f50 100%
-    );
-    &::before {
-      background: rgba(255,255,255,0.3);
-    }
-    &::after {
-      background: 
-        linear-gradient(
-          to bottom,
-          transparent 0%,
-          transparent 40%,
-          #ff4500 40%,
-          #ff4500 60%,
-          transparent 60%,
-          transparent 100%
-        );
-    }
-  }
-
-  .clothespin.wooden {
-    background: linear-gradient(90deg, 
-      #b98b56 0%, 
-      #c59d77 25%, 
-      #b98b56 50%, 
-      #c59d77 75%, 
-      #b98b56 100%
-    );
-    border: 1px solid rgba(139, 69, 19, 0.3);
-    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.2);
-    &::before {
-      background: rgba(139, 69, 19, 0.2);
-    }
-    &::after {
-      background: 
-        linear-gradient(
-          to bottom,
-          transparent 0%, 
-          transparent 40%, 
-          #8b4513 40%, 
-          #8b4513 60%, 
-          transparent 60%, 
-          transparent 100%
-        );
-      opacity: 0.8;
-    }
-  }
-
-  .clothespin.plastic {
-    background: linear-gradient(90deg, 
-      #00bfff 0%, 
-      #87cefa 25%, 
-      #00bfff 50%, 
-      #87cefa 75%, 
-      #00bfff 100%
-    );
-    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
-    &::before {
-      background: rgba(0, 0, 0, 0.15);
-    }
-    &::after {
-      background: 
-        linear-gradient(
-          to bottom,
-          transparent 0%, 
-          transparent 40%, 
-          #1e90ff 40%, 
-          #1e90ff 60%, 
-          transparent 60%, 
-          transparent 100%
-        );
-    }
-  }
-
-  .clothespin.striped {
-    background: linear-gradient(90deg, 
-      #f44336 0%, 
-      #ff9800 25%, 
-      #4caf50 50%, 
-      #2196f3 75%, 
-      #9c27b0 100%
-    );
-    background-size: 40px 35px;
-    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.2);
-    &::before {
-      background: rgba(255, 255, 255, 0.3);
-    }
-    &::after {
-      background: 
-        linear-gradient(
-          to bottom,
-          transparent 0%, 
-          transparent 40%, 
-          #000000 40%, 
-          #000000 60%, 
-          transparent 60%, 
-          transparent 100%
-        );
-    }
-  }
-
-  .clothespin.rainbow {
-    background: linear-gradient(90deg, 
-      #ff0000 0%, 
-      #ff9900 25%, 
-      #33cc33 50%, 
-      #3399ff 75%, 
-      #cc33cc 100%
-    );
-    background-size: 20px 35px;
-    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3);
-    &::before {
-      background: rgba(0, 0, 0, 0.1);
-    }
-    &::after {
-      background: 
-        linear-gradient(
-          to bottom,
-          transparent 0%, 
-          transparent 40%, 
-          #ff4500 40%, 
-          #ff4500 60%, 
-          transparent 60%, 
-          transparent 100%
-        );
-    }
-  }
-
-  .clothespin.custom {
-    position: absolute;
-    width: 25px;
-    height: 50px;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-5deg);
-    background: linear-gradient(45deg, 
-      #8b4513 0%, 
-      #deb887 50%, 
-      #8b4513 100%
-    );
-    border-radius: 8px 8px 10px 10px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 2px 2px 5px rgba(0, 0, 0, 0.2);
-    background-size: 20px 20px; /* Texture-like look */
-    position: relative;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    z-index: 15;
-  }
-  
+  }  
   /* Unique Worn-Down Effects with Clip-path for the clothespin */
   .clothespin.custom::before {
     content: 'M';
@@ -464,3 +298,321 @@
     transform: translateX(-50%) rotate(-3deg) scale(1);
   }
   
+
+.photo-caption {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: white;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;  /* Elegant script font */
+  z-index: 1;
+  overflow: hidden;
+}
+
+.caption-text {
+  display: inline-block;
+  font-size: 20px;
+  color: #333;
+  position: relative;
+  margin: 0;
+  padding: 0 15px;
+  animation: captionFade 0.8s ease-out forwards;
+  word-break: break-word;
+  width: 100%;
+}
+
+/* Decorative elements */
+.caption-text::before,
+.caption-text::after {
+  content: '♥';
+  position: absolute;
+  opacity: 0;
+  color: #ff69b4;
+  font-size: 24px;
+  transform: translateY(20px);
+  top: -2px;
+  left: -15px;
+  animation: decorFadeLeft 0.8s ease-out 0.3s forwards;
+  letter-spacing: -8px;
+}
+
+.caption-text::before {
+  left: -25px;
+  animation: decorFadeLeft 0.8s ease-out 0.3s forwards;
+}
+
+.caption-text::after {
+  right: -25px;
+  animation: decorFadeRight 0.8s ease-out 0.3s forwards;
+}
+
+/* Animations */
+@keyframes captionFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes decorFadeLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-10px, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes decorFadeRight {
+  0% {
+    opacity: 0;
+    transform: translate(10px, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Hover effect */
+.photo-frame:hover .caption-text {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.photo-frame:hover .caption-text::before {
+  animation: heartBeat 1s infinite;
+}
+
+.photo-frame:hover .caption-text::after {
+  animation: heartBeat 1s infinite;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Add subtle shine effect */
+.caption-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@media (max-width: 768px) {
+  /* Adjust gallery container */
+  .clothesline-gallery {
+    padding: 20px 10px;
+    min-height: 500px;
+  }
+
+  /* Hide the clothesline for better clarity on smaller screens */
+  .clothesline,
+  .clothesline-shadow {
+    display: none;
+  }
+
+  /* Adjust photo frames layout */
+  .photos-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    height: auto;
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 90%;
+    min-height: 300px;
+    margin: 10px 0;
+    left: auto !important;
+    top: auto !important;
+    animation: none;
+  }
+
+  /* Adjust photo image size */
+  .photo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Adjust photo captions */
+  .photo-caption {
+    font-size: 12px;
+    padding: 6px;
+    min-height: 40px;
+  }
+
+  /* Adjust clothespins for smaller screens */
+  .clothespin {
+    width: 15px;
+    height: 25px;
+    top: -20px;
+  }
+
+  /* Adjust caption text */
+  .caption-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  /* Reduce animation intensity on smaller devices */
+  .photo-frame:hover {
+    transform: none;
+    z-index: 1;
+    animation-play-state: paused;
+  }
+}
+
+.gallery-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.gallery-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  color: #fff;
+  background: linear-gradient(45deg, rgb(229, 147, 160), rgb(229,147,160));
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.gallery-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.gallery-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(45deg, #ff8e8e, #ff6b6b);
+}
+
+.gallery-btn:hover::before {
+  left: 100%;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hearts-decoration {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.heart {
+  color: #ff6b6b;
+  font-size: 16px;
+  animation: floatHeart 1.5s infinite ease-in-out;
+}
+
+.heart:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.heart:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.gallery-btn:hover .hearts-decoration {
+  opacity: 1;
+  bottom: -25px;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Add subtle pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.gallery-btn {
+  animation: pulse 2s infinite;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .gallery-btn {
+    font-size: 20px;
+    padding: 12px 25px;
+  }
+  
+  .gallery-button-container {
+    margin-top: 40px;
+  }
+}
