@@ -302,10 +302,6 @@ body {
     font-size: clamp(14px, 2vw, 16px);
     padding: clamp(10px, 1.5vw, 15px) clamp(20px, 2vw, 25px);
   }
-
-  .overlay {
-    opacity: 1 !important;
-  }
 }
 
 /* For smaller screens (less than 768px) */
