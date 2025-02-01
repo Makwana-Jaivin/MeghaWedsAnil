@@ -357,10 +357,26 @@
                 background-image: url('images/img_bg_3.jpg');
                 background-size: cover;
                 background-position: center;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
               "
             >
-            <iframe  src="https://www.youtube.com/embed/DBoh8qbugK0?si=zn2-Yq22K6BEjb1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+            <iframe 
+                  src="https://www.youtube.com/embed/DBoh8qbugK0?si=zn2-Yq22K6BEjb1E&autoplay=1&mute=1" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                ></iframe>
               <!-- Custom Play Button Overlay -->
               <div class="play-button-overlay">
                 <i class="icon-play-circle"></i>
@@ -467,7 +483,7 @@
         setTimeout(function () {
           document.getElementById("loader").style.display = "none";
           document.getElementById("gallery-page").style.display = "block";
-        }, 3000); // Loader lasts 3 seconds
+        }, 1000); // Loader lasts 3 seconds
       });
 
       document.addEventListener('DOMContentLoaded', () => {
