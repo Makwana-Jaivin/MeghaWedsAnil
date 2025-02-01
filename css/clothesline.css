@@ -327,7 +327,7 @@
 /* Decorative elements */
 .caption-text::before,
 .caption-text::after {
-  content: '♥';
+  content: '';
   position: absolute;
   opacity: 0;
   color: #ff69b4;
@@ -492,7 +492,7 @@
   }
 }
 
-.gallery-button-container {
+/* .gallery-button-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -588,7 +588,7 @@
   }
 }
 
-/* Add subtle pulse animation */
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -605,7 +605,7 @@
   animation: pulse 2s infinite;
 }
 
-/* Make it responsive */
+
 @media (max-width: 768px) {
   .gallery-btn {
     font-size: 20px;
@@ -614,5 +614,157 @@
   
   .gallery-button-container {
     margin-top: 40px;
+  }
+} */
+
+.gallery-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 20px;
+  position: relative;
+}
+
+.gallery-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  color: #fff;
+  background: linear-gradient(45deg, rgb(229, 147, 160), rgb(229,147,160));
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+  animation: pulse 2s infinite;
+}
+
+.gallery-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.gallery-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(45deg, #ff8e8e, #ff6b6b);
+}
+
+.gallery-btn:hover::before {
+  left: 100%;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hearts-decoration {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.heart {
+  color: #ff6b6b;
+  font-size: 16px;
+  animation: floatHeart 1.5s infinite ease-in-out;
+}
+
+.heart:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.heart:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.gallery-btn:hover .hearts-decoration {
+  opacity: 1;
+  bottom: -25px;
+}
+
+.gallery-description {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  text-align: center;
+  max-width: 250px;
+  box-shadow: 0 4px 6px rgba(255, 107, 107, 0.1);
+  pointer-events: none;
+}
+
+.gallery-btn:hover .gallery-description {
+  top: calc(100% + 10px);
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-btn {
+    font-size: 20px;
+    padding: 12px 25px;
+  }
+  
+  .gallery-button-container {
+    margin-top: 40px;
+  }
+  
+  .gallery-description {
+    font-size: 12px;
+    max-width: 200px;
   }
 }
