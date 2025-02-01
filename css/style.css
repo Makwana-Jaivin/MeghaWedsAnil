@@ -345,7 +345,7 @@ figure {
 
 .fh5co-cover {
   height: 900px;
-  background-image: url('../images/bg.jpg');
+  background-image: url('../images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -381,6 +381,10 @@ figure {
 }
 
 @media screen and (max-width: 768px) {
+
+  .fh5co-cover {
+    background-image: url('../images/prewedding/12.jpg');
+  }
 
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
