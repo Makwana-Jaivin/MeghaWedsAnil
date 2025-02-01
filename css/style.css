@@ -382,11 +382,6 @@ figure {
 
 @media screen and (max-width: 768px) {
 
-  .fh5co-cover {
-    background-image: url('../images/prewedding/12.jpg');
-    height: 600px;
-  }
-
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
     height: 600px;
