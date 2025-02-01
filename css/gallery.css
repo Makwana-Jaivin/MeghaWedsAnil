@@ -60,7 +60,7 @@ body {
   border-radius: 10px;
   background: white;
   padding: clamp(8px, 2vw, 15px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   aspect-ratio: 2/3;
 }
@@ -76,7 +76,7 @@ body {
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,14 +98,14 @@ body {
 }
 
 .view-btn:hover {
-  transform: scale(1) !important ;  
+  transform: scale(1) !important;
 }
 
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -115,16 +115,22 @@ body {
   position: relative;
   width: auto;
   max-width: 100%;
-  max-height: 90vh; /* Limit the height of the modal */
+  max-height: 90vh;
+  /* Limit the height of the modal */
   display: block;
   margin: 0 auto;
 }
+
 .modal img {
-  max-width: 100%; /* Prevent stretching */
-  max-height: 100%; /* Ensure the image fits within the modal */
-  object-fit: contain; /* Maintain aspect ratio */
+  max-width: 100%;
+  /* Prevent stretching */
+  max-height: 100%;
+  /* Ensure the image fits within the modal */
+  object-fit: contain;
+  /* Maintain aspect ratio */
   transition: transform 0.3s ease;
 }
+
 .box-container {
   display: flex;
   justify-content: center;
@@ -137,11 +143,16 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-between; /* Space between boxes */
-  align-items: center; /* Vertically center the boxes */
-  gap: clamp(20px, 5vw, 30px); /* Adjust the gap between boxes */
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
-  padding: clamp(10px, 3vw, 20px); /* Adjust padding */
+  justify-content: space-between;
+  /* Space between boxes */
+  align-items: center;
+  /* Vertically center the boxes */
+  gap: clamp(20px, 5vw, 30px);
+  /* Adjust the gap between boxes */
+  flex-wrap: wrap;
+  /* Allows wrapping on smaller screens */
+  padding: clamp(10px, 3vw, 20px);
+  /* Adjust padding */
 }
 
 .heart-box {
@@ -173,26 +184,30 @@ body {
   }
 
   .heart-box {
-    width: min(500px, 45%); /* Ensure boxes don't exceed 45% of container width */
+    width: min(500px, 45%);
+    /* Ensure boxes don't exceed 45% of container width */
   }
 }
 
 /* For smaller devices */
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column; /* Stack the boxes vertically */
-    align-items: center; /* Center-align the boxes */
+    flex-direction: column;
+    /* Stack the boxes vertically */
+    align-items: center;
+    /* Center-align the boxes */
   }
 
   .heart-box {
-    width: 80%; /* Make the boxes larger on small screens */
+    width: 80%;
+    /* Make the boxes larger on small screens */
   }
 }
 
 @media (hover: hover) {
   .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   .gallery-item:hover .overlay {
@@ -207,7 +222,7 @@ body {
     opacity: 1;
   }
 
-  .box-container > div:hover {
+  .box-container>div:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(255, 127, 127, 0.2);
   }
@@ -236,26 +251,40 @@ body {
 }
 
 @keyframes floatHeart {
-  0% { top: 100%; left: 10%; opacity: 0; }
-  50% { opacity: 1; }
-  100% { top: -20%; left: 90%; opacity: 0; }
+  0% {
+    top: 100%;
+    left: 10%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: -20%;
+    left: 90%;
+    opacity: 0;
+  }
 }
+
 /* General Styles for Download Button */
 .download-btn {
   padding: clamp(8px, 2vw, 10px) clamp(16px, 3vw, 20px);
-  background: lightpink; 
-  color: white; 
+  background: lightpink;
+  color: white;
   border: none;
-  border-radius: 25px; 
-  cursor: pointer; 
-  transform: scale(0.8); 
-  transition: transform 0.3s ease; 
-  font-size: clamp(14px, 2vw, 16px); 
-  margin-top: 10px; 
+  border-radius: 25px;
+  cursor: pointer;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  font-size: clamp(14px, 2vw, 16px);
+  margin-top: 10px;
 
 }
+
 .download-btn:hover {
-  transform: scale(1); 
+  transform: scale(1);
 }
 
 
@@ -265,42 +294,53 @@ body {
 /* For screens larger than 768px (tablet and above) */
 @media (min-width: 768px) {
   .download-btn {
-    font-size: clamp(14px, 2vw, 16px); 
-    padding: clamp(10px, 1.5vw, 15px) clamp(20px, 2vw, 25px); 
+    font-size: clamp(14px, 2vw, 16px);
+    padding: clamp(10px, 1.5vw, 15px) clamp(20px, 2vw, 25px);
   }
 
   .view-btn {
     font-size: clamp(14px, 2vw, 16px);
     padding: clamp(10px, 1.5vw, 15px) clamp(20px, 2vw, 25px);
   }
+
+  .overlay {
+    opacity: 1 !important;
+  }
 }
 
 /* For smaller screens (less than 768px) */
 @media (max-width: 768px) {
   .download-btn {
-    width: 100%; 
-    font-size: clamp(12px, 2vw, 14px); 
-    margin-top: 8px; 
+    width: 100%;
+    font-size: clamp(12px, 2vw, 14px);
+    margin-top: 8px;
   }
 
   .view-btn {
-    width: 100%; /* Make the button full width on smaller screens */
-    font-size: clamp(12px, 2vw, 14px); /* Adjust font size for smaller screens */
-    margin-top: 8px; /* Adjust spacing between buttons */
+    width: 100%;
+    /* Make the button full width on smaller screens */
+    font-size: clamp(12px, 2vw, 14px);
+    /* Adjust font size for smaller screens */
+    margin-top: 8px;
+    /* Adjust spacing between buttons */
   }
 }
 
 
 @media (max-width: 480px) {
   .download-btn {
-    font-size: clamp(12px, 2vw, 14px); 
-    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 20px); 
-    width: 100%; /* Ensure button takes full width on very small screens */
+    font-size: clamp(12px, 2vw, 14px);
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 20px);
+    width: 100%;
+    /* Ensure button takes full width on very small screens */
   }
 
   .view-btn {
-    font-size: clamp(12px, 2vw, 14px); /* Further reduce font size */
-    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 20px); /* Adjust padding */
-    width: 100%; /* Ensure button takes full width on very small screens */
+    font-size: clamp(12px, 2vw, 14px);
+    /* Further reduce font size */
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 20px);
+    /* Adjust padding */
+    width: 100%;
+    /* Ensure button takes full width on very small screens */
   }
 }
