@@ -91,6 +91,14 @@
   color: #666;
   margin: 5px 0;
   font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+.dress-male {
+  color: #1e88e5; /* Blue shade for male */
+}
+
+.dress-female {
+  color: #e91e63; /* Pink shade for female */
 }
 
 .event-date {
